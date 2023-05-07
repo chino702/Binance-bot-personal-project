@@ -43,11 +43,13 @@ async function trade() {
   }
 }
 
-// Call the trade function every minute
-setInterval(trade, 60000);
+// Call the trade function when the button is clicked
+const button = document.querySelector('button');
+button.addEventListener('click', trade);
 
 fetch('http://localhost:3000/products')
   .then(response => response.json())
   .then(data => {
     // Do something with the data
   });
+
